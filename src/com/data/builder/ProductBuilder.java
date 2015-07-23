@@ -12,7 +12,7 @@ public class ProductBuilder implements DataBuilder{
 	@Override
 	public void generateData(String path) throws IOException {
 		FileWriter writer = new FileWriter(path);
-		createHeader(writer);
+		//createHeader(writer);
 		int count = 1;
 		while (count < 20) {
 			writer.append(UUID.randomUUID().toString());
@@ -30,9 +30,9 @@ public class ProductBuilder implements DataBuilder{
 
 	@Override
 	public void createHeader(FileWriter writer) throws IOException {
-		writer.append("Product_ID");
+		writer.append("SKuId");
 		writer.append("|");
-		writer.append("ProductName");
+		writer.append("SKUName");
 		writer.append("|");
 		writer.append("ProductCategory");
 		writer.append("\n");	

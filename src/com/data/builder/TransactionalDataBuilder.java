@@ -65,7 +65,7 @@ public class TransactionalDataBuilder implements DataBuilder{
 	@Override
 	public void generateData(String path) throws IOException {
 		FileWriter writer = new FileWriter(path);
-		createHeader(writer);
+		//createHeader(writer);
 		int count = 1;
 		DataFactory dataFactory = new DataFactory();
 		while (count < 50) {

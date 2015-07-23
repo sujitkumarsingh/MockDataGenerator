@@ -13,20 +13,20 @@ public class StoreBuilder implements DataBuilder{
 	@Override
 	public void generateData(String path) throws IOException {
 		FileWriter writer = new FileWriter(path);
-		createHeader(writer);
+		//createHeader(writer);
 		int count = 1;
 		DataFactory dataFactory = new DataFactory();
-		while (count < 20) {
+		while (count < 50) {
 			writer.append(UUID.randomUUID().toString());
 			writer.append("|");
 			writer.append(dataFactory.getBusinessName());
 			writer.append("|");
 			writer.append(dataFactory.getAddress());
-			writer.append("|");
+			writer.append("$");
 			writer.append(CountryHelper.getState());
-			writer.append("|");
+			writer.append("$");
 			writer.append(CountryHelper.getCountry());
-			writer.append("|");
+			writer.append("$");
 			writer.append(dataFactory.getNumberText(5));
 			writer.append("\n");
 			count++;
@@ -37,17 +37,17 @@ public class StoreBuilder implements DataBuilder{
 
 	@Override
 	public void createHeader(FileWriter writer) throws IOException {
-		writer.append("Store_ID ");
+		writer.append("StoreId ");
 		writer.append("|");
-		writer.append("Store_name ");
+		writer.append("StoreName ");
 		writer.append("|");
-		writer.append("Store_address ");
-		writer.append("|");
+		writer.append("StoreAddress ");
+		writer.append("$");
 		writer.append("State");
-		writer.append("|");
+		writer.append("$");
 		writer.append("Country");
-		writer.append("|");
-		writer.append("Zip_code");
+		writer.append("$");
+		writer.append("ZipCode");
 		writer.append("\n");	
 	}
 
